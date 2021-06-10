@@ -25,7 +25,7 @@
                 <div class="tittle" style="color:#fff;">
                     <p>Edite o seu veiculo!</p>
                 </div>
-                <form action="cadVeiculo.php" method="post" style="margin-left:130px;">
+                <form action="update.php" method="post" style="margin-left:130px;">
                     <label for="placa">Placa do veiculo</label>
                     <input type="text" name="placa" id="placa" placeholder="Digite a placa do veiculo" value="<?php echo  getDadosVeiculo($_GET['id'],'placaVeiculo')?>">
                     <label for="ano">Ano do veículo</label>
@@ -55,6 +55,7 @@
                         <option value="<?php echo getDadosVeiculo($_GET['id'],'Categoria_idCategoria'); ?>"><?php echo getCategoria(getDadosVeiculo($_GET['id'],'Categoria_idCategoria'))?></option>
                         <?php getAllCategoria();?>
                     </select>
+                    <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
                     <button class="ok cadastrar" type="submit" value="OK"><div>Cadastrar</div></button>
                 </form>
             </div>
